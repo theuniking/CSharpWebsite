@@ -1,0 +1,24 @@
+﻿@using MyCompany.ViewModels
+@model BooksListViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>List</title>
+    </head>
+    <body>
+        <h2>Все книги</h2>
+        <p>@ViewBag.Category</p>
+    @{
+        foreach(var book in Model.allBooks)
+        {
+            <div><h2>Ima: @book.name</h2><p>Cena: @book.price</p></div>
+        }
+        }
+    </body>
+</html>
