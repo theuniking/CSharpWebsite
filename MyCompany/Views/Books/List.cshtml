@@ -10,15 +10,25 @@
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>List</title>
+        <link href="/bootstrapcss/bootstrap.min.css" rel="stylesheet"/>
     </head>
     <body>
         <h2>Все книги</h2>
-        <p>@ViewBag.Category</p>
-    @{
+        <p>@Model.currCategory</p>
+        <div class="row mt-5 mb-2">
+             @{
         foreach(var book in Model.allBooks)
         {
-            <div><h2>Ima: @book.name</h2><p>Cena: @book.price</p></div>
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@book.img" alt="@book.name" />
+                <h2>@book.name</h2>
+                <p>@book.shortDecc</p>
+                <p>Cena: @book.price tenge</p>
+                <p><a class="btn btn-warning" href="#">Добавить в корзину</a></p>
+            </div>
         }
         }
+        </div>
+   
     </body>
 </html>

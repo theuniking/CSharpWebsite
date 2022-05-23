@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MyCompany.Domain.Entities;
+using MyCompany.wwwroot.Data.Models;
 
 namespace MyCompany.Domain
 {
@@ -60,5 +61,7 @@ namespace MyCompany.Domain
                 Title = "Контакты"
             });
         }
+        public DbSet<Book> Book { get; set; }
+        public DbSet<Category> Category { get; set; }
     }
 }
